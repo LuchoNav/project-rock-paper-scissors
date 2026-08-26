@@ -1,5 +1,7 @@
 const container = document.querySelector("#container");
-const result = document.getElementById("result")
+const puntuacionHumano = document.getElementById("resultado-humano");
+const puntuacionComputadora = document.getElementById("resultado-computadora");
+const puntuacionEmpates = document.getElementById("resultado-empates");
 
 //boton 1
 const btn = document.createElement("button")
@@ -77,13 +79,15 @@ function playRound(humanChoice, computerChoice) {
         computerScore++
 
     }
-    result.textContent = `Humano eligió: ${humanChoice} | Computadora eligió: ${computerChoice} | Puntuación - Humano: ${humanScore} Computadora: ${computerScore}`;
+    puntuacionHumano.textContent = `Humano: ${humanScore}`;
+    puntuacionComputadora.textContent = `Computadora: ${computerScore}`;
+    puntuacionEmpates.textContent = `Empates: ${tie}`;
 
-    if (humanScore === 5){
+    if (humanScore === 5) {
         btn.disabled = true;
         btn2.disabled = true;
         btn3.disabled = true;
-        result.textContent = "Felicidades, Eres el ganador"
+        result.textContent = "🎉 ¡Felicidades, Eres el ganador!"
     } else if (computerScore === 5) {
         btn.disabled = true;
         btn2.disabled = true;
