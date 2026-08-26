@@ -1,8 +1,6 @@
 # 💻 Odin Mini Game — Rock, Paper, Scissors
 
 
----
-
 ## 🇬🇧 English
 
 Practice project developed as part of **The Odin Project** curriculum.
