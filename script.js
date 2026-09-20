@@ -2,7 +2,7 @@ const container = document.querySelector("#container");
 const puntuacionHumano = document.getElementById("resultado-humano");
 const puntuacionComputadora = document.getElementById("resultado-computadora");
 const puntuacionEmpates = document.getElementById("resultado-empates");
-const result = document.getElementById("resultado¡");
+const result = document.getElementById("result");
 
 //boton 1
 const btn = document.createElement("button")
@@ -88,7 +88,6 @@ let computerScore = 0
 let tie = 0
 
 function playRound(humanChoice, computerChoice) {
-    btnReset.style.display = "none";
     if (humanChoice === computerChoice) {
         tie++;
     }
@@ -116,8 +115,8 @@ function playRound(humanChoice, computerChoice) {
         btn.disabled = true;
         btn2.disabled = true;
         btn3.disabled = true;
-        btnReset.style.display = "block";
         result.textContent = "Perdiste!"
+        btnReset.style.display = "block";
     }
 
 }
