@@ -2,6 +2,7 @@ const container = document.querySelector("#container");
 const puntuacionHumano = document.getElementById("resultado-humano");
 const puntuacionComputadora = document.getElementById("resultado-computadora");
 const puntuacionEmpates = document.getElementById("resultado-empates");
+const result = document.getElementById("result");
 
 //boton 1
 const btn = document.createElement("button")
@@ -58,16 +59,37 @@ function getComputerChoice(max) {
     return result
 }
 
+const btnReset = document.createElement("button");
+btnReset.classList.add("reset");
+btnReset.textContent = "Reiniciar";
+container.appendChild(btnReset);
+btnReset.style.display = "none";
+
+btnReset.addEventListener("click", function () {
+    humanScore = 0;
+    computerScore = 0;
+    tie = 0;
+
+    puntuacionHumano.textContent = `Humano: 0`;
+    puntuacionComputadora.textContent = `Computadora: 0`;
+    puntuacionEmpates.textContent = `Empates: 0`;
+
+    btn.disabled = false;
+    btn2.disabled = false;
+    btn3.disabled = false;
+    
+
+    result.textContent = "";
+});
 
 let humanScore = 0
 let computerScore = 0
 let tie = 0
 
 function playRound(humanChoice, computerChoice) {
-
+    btnReset.style.display = "none";
     if (humanChoice === computerChoice) {
-        tie++
-            ;
+        tie++;
     }
 
     if (humanChoice === "rock" && computerChoice === "scissors" ||
@@ -88,10 +110,12 @@ function playRound(humanChoice, computerChoice) {
         btn2.disabled = true;
         btn3.disabled = true;
         result.textContent = "🎉 ¡Felicidades, Eres el ganador!"
+        btnReset.style.display = "block";
     } else if (computerScore === 5) {
         btn.disabled = true;
         btn2.disabled = true;
         btn3.disabled = true;
+        btnReset.style.display = "block";
         result.textContent = "Perdiste!"
     }
 
