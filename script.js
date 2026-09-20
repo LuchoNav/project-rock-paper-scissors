@@ -2,7 +2,7 @@ const container = document.querySelector("#container");
 const puntuacionHumano = document.getElementById("resultado-humano");
 const puntuacionComputadora = document.getElementById("resultado-computadora");
 const puntuacionEmpates = document.getElementById("resultado-empates");
-const result = document.getElementById("result");
+const result = document.getElementById("resultado¡");
 
 //boton 1
 const btn = document.createElement("button")
@@ -77,6 +77,7 @@ btnReset.addEventListener("click", function () {
     btn.disabled = false;
     btn2.disabled = false;
     btn3.disabled = false;
+    btnReset.style.display = "none";
     
 
     result.textContent = "";
